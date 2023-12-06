@@ -2,15 +2,12 @@
 name = "audit_logging"
 version = "0.1.0"
 description = "A Django middleware for audit logging."
-authors = ["Your Name francopasseggi@gmail.com>"]
+authors = ["Franco Passeggi <francopasseggi@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 Django = ">=4.2,<5.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.7.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.packages]
-include = [{ include = "audit_logging", from = "src" }]
