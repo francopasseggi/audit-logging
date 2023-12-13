@@ -42,6 +42,7 @@ class AuditPayload(TypedDict):
     ip: str
     elapsed_time_seconds: str
     audit_data: list[AuditDataElement]
+    service_name: str | None
 
 
 class EgressAuditLogMiddleware:
@@ -178,6 +179,7 @@ class EgressAuditLogMiddleware:
             access_time=timestamp,
             elapsed_time_seconds=elapsed_time,
             audit_data=audit_data,
+            service_name=settings.EGRESS_LOGGING_CONFIGURATION.get("service_name"),
         )
 
     def _get_user_identifying_information(self, request: Request) -> str:
