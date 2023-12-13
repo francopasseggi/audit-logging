@@ -2,7 +2,7 @@
 name = "audit_logging"
 version = "0.1.0"
 description = "A Django middleware for audit logging."
-authors = ["Franco Passeggi <francopasseggi@gmail.com>"]
+authors = ["Franco Passeggi <franco.passeggi@anglehealth.com>"]
 packages = [{include = "audit_logging", from = "src"}]
 
 [tool.poetry.dependencies]
@@ -12,6 +12,16 @@ djangorestframework = "^3.14.0"
 
 [tool.poetry.group.test.dependencies]
 moto = {extras = ["s3"], version = "^4.2.11"}
+
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-django = "^4.7.0"
+pytest = "^7.4.3"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "django_project.settings"
+python_files = ["test_*.py", "tests.py", "*_test.py", "testing/python/*.py"]
 
 [build-system]
 requires = ["poetry-core>=1.7.0"]
