@@ -3,10 +3,15 @@ name = "audit_logging"
 version = "0.1.0"
 description = "A Django middleware for audit logging."
 authors = ["Franco Passeggi <francopasseggi@gmail.com>"]
+packages = [{include = "audit_logging", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 Django = ">=4.2,<5.0"
+djangorestframework = "^3.14.0"
+
+[tool.poetry.group.test.dependencies]
+moto = {extras = ["s3"], version = "^4.2.11"}
 
 [build-system]
 requires = ["poetry-core>=1.7.0"]
